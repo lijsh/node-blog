@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  form(action=(id ? "/api/post/" + id : "/api/post") method="post")
+    lable(for="title") 标题
+    input(
+      id="title"
+      type="text"
+      name="title"
+      if postTitle
+        value=postTitle
+    )
+    textarea(name="content")=content || undefined
+    input(
+      type="submit"
+      value="提交"
+    )
+

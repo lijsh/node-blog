@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1=title
+  section
+    !=content
+    form(action="/api/post/" + id + "/delete" method="post")
+      input(
+      type="submit"
+      value="删除"
+    )
